@@ -1,0 +1,62 @@
+
+[project]
+name = "strava-api"
+authors = [{name = "Robin"}]
+maintainers = [{name = "Robin"}]
+requires-python = ">=3.11"
+
+dependencies = []
+dynamic = ["version"]
+
+[project.optional-dependencies]
+
+[project.scripts]
+
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.setuptools_scm]
+fallback_version = "0.0.0"
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+
+
+
+# Basic config for Ruff : https://docs.astral.sh/ruff/configuration/
+[tool.ruff]
+line-length = 120
+include = ["**/*.py"]
+exclude = [
+    "**/.eggs/**",
+    "**/.git/**",
+    "**/.hg/**",
+    "**/.mypy_cache/**",
+    "**/.tox/**",
+    "**/.venv/**",
+    "**/_build/**",
+    "**/buck-out/**",
+    "**/build/**",
+    "**/dist/**",
+    "**/notebooks/**",
+]
+
+[tool.ruff.lint]
+select = [
+    # pycodestyle
+    "E",
+    # Pyflakes
+    "F",
+    # pyupgrade
+    "UP",
+    # flake8-bugbear
+    "B",
+    # flake8-simplify
+    "SIM",
+    # isort
+    "I",
+]
+ignore = []
+extend-select = []
+fixable = ["ALL"]
